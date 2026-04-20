@@ -1,0 +1,180 @@
+/* 1. GIAO DIỆN CHUNG */
+body {
+    background-color: #fdfaf5; /* Màu kem nhạt cho sang */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #4e342e; /* Chữ màu nâu đậm */
+}
+
+/* 2. HIỆU ỨNG CHO CÁC Ô BÀN */
+.table-item {
+    transition: all 0.3s ease;
+    user-select: none;
+    border: none;
+    width: 110px;
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
+}
+
+/* Bàn trống - Nâu nhạt */
+.bg-success {
+    background-color: #a1887f !important; 
+}
+
+/* Bàn có khách - Nâu đỏ đậm */
+.bg-danger {
+    background-color: #795548 !important;
+}
+
+.table-item:hover {
+    transform: translateY(-5px);
+    filter: brightness(1.1);
+    box-shadow: 0 4px 12px rgba(78, 52, 46, 0.3) !important;
+}
+
+.table-item:active {
+    transform: scale(0.95);
+}
+
+/* 3. SIDEBAR ADMIN (Tone nâu đen cực sang) */
+.sidebar {
+    background: #3e2723;
+    min-height: 100vh;
+    color: white;
+}
+
+.sidebar .nav-link {
+    color: #d7ccc8;
+    padding: 13px 20px;
+}
+
+.sidebar .nav-link:hover {
+    background: #5d4037;
+    color: white;
+}
+
+.sidebar .nav-link.active {
+    background: #8d6e63;
+    color: white;
+}
+
+/* 4. HÓA ĐƠN & BILL BOX */
+.bill-container {
+    max-width: 500px;
+    background: white;
+    padding: 20px;
+    border: 1px dashed #d7ccc8;
+    border-radius: 15px;
+}
+
+.bill-box {
+    border-radius: 12px;
+    background: #fdfaf5;
+    padding: 15px;
+}
+
+.bill-box h3 {
+    color: #4e342e;
+    font-weight: bold;
+}
+
+/* 5. NÚT MUA NGAY & THANH TOÁN (Giữ màu xanh lá như mày muốn) */
+.btn-success, .btn-primary { 
+    background-color: #1a633f !important; /* Xanh lá đậm như ảnh trước mày gửi */
+    border: none !important;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-success:hover, .btn-primary:hover {
+    background-color: #145233 !important;
+    transform: scale(1.02);
+}
+
+/* 6. CARD MENU */
+.card {
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    overflow: hidden;
+}
+
+.card-title {
+    font-weight: bold;
+    color: #4e342e;
+}
+
+/* Khống chế kích thước ảnh */
+.card-img-top {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 15px;
+}
+
+/* Media print để khi in hóa đơn không hiện nút */
+@media print {
+    .btn-print { display: none; }
+}
+
+/* Khống chế kích thước ảnh món ăn */
+.card-img-top {
+    width: 100%;       /* Chiều rộng bằng khung thẻ */
+    height: 150px;     /* CHIỀU CAO CỐ ĐỊNH - Sửa số này để to/nhỏ tùy ý */
+    object-fit: cover; /* Quan trọng: Ảnh sẽ tự cắt cúp để không bị méo */
+    border-top-left-radius: calc(0.375rem - 1px);
+    border-top-right-radius: calc(0.375rem - 1px);
+}
+
+/* Chỉnh lại thẻ card để nội dung gọn gàng */
+.card {
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.card-body {
+    padding: 10px; /* Thu nhỏ khoảng cách chữ cho gọn */
+}
+
+.card-title {
+    font-size: 1rem; /* Chữ tên món nhỏ lại chút */
+    margin-bottom: 5px;
+}
+/* Thu nhỏ Card Menu */
+.card {
+    border-radius: 10px; /* Bo góc ít lại cho gọn */
+    max-width: 220px;   /* Giới hạn độ rộng tối đa của mỗi cái card */
+    margin: 0 auto;     /* Căn giữa card trong cột */
+}
+
+/* Ép ảnh nhỏ lại nữa */
+.card-img-top {
+    width: 100%;
+    height: 120px;     /* Giảm từ 150px xuống 120px cho nó thanh thoát */
+    object-fit: cover;
+}
+
+/* Thu nhỏ phần nội dung chữ */
+.card-body {
+    padding: 10px !important; /* Giảm padding cho card đỡ béo */
+}
+
+.card-title {
+    font-size: 0.9rem !important; /* Chữ tên món nhỏ lại */
+    margin-bottom: 5px;
+}
+
+.text-success.fw-bold {
+    font-size: 0.85rem; /* Chữ giá tiền nhỏ lại */
+}
+
+/* Thu nhỏ nút Mua ngay */
+.btn-success {
+    font-size: 0.75rem !important; /* Chữ trong nút nhỏ lại */
+    padding: 4px 10px !important;  /* Nút ngắn lại */
+}

@@ -1,0 +1,268 @@
+/*1. MÀU (Dùng chung cho toàn bộ hệ thống)*/
+    :root {
+        --dark-coffee: #3e2723;
+        --medium-coffee: #5d4037;
+        --light-coffee: #d7ccc8;
+        --gold-coffee: #bcaaa4;
+    }
+/*2. KHUNG TRANG*/
+    body { 
+        font-family: 'Segoe UI', Arial, sans-serif; 
+        margin: 0; 
+        display: flex;
+        background-color: #fdf5e6; 
+    }
+/*Menu trái*/
+    .sidebar { 
+        width: 260px; 
+        background: var(--dark-coffee); 
+        color: white; 
+        height: 100vh; 
+        position: fixed; 
+        padding: 20px;
+        box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+        left: 0;
+        top: 0;
+        padding: 20px;
+    }
+/*tiêu đề*/
+.sidebar h3 { 
+    text-align: center; 
+    padding-bottom: 15px; 
+    border-bottom: 1px solid var(--gold-coffee); 
+    }
+/*danh sách menu*/
+    .sidebar ul { 
+    list-style: none; 
+    padding: 0; 
+    margin-top: 30px; 
+    }
+/*item*/
+    .sidebar ul li { 
+    margin-bottom: 15px; 
+    }
+    /*link menu*/
+    .sidebar ul li a { 
+        display: block; 
+        text-decoration: none; 
+        color: white; 
+        padding: 12px; 
+        background: var(--medium-coffee); 
+        border-radius: 8px; 
+        text-align: center;
+        transition: 0.3s;
+    }
+/*hover menu*/
+    .sidebar ul li a:hover { 
+        background: var(--gold-coffee); 
+        color: var(--dark-coffee);
+        font-weight: bold;
+    }
+/* NỘI DUNG CHÍNH*/   
+    .main-content { 
+        margin-left: 300px; 
+        padding: 40px; 
+        width: 100%;
+    }
+/*3. CSS CHO BẢNG DANH SÁCH*/
+/* TIÊU ĐỀ*/
+h2 { color: var(--dark-coffee); margin-bottom: 20px; }
+/*BẢNG*/
+    table { 
+        width: 100%; 
+        border-collapse: collapse; 
+        background: white; 
+        border-radius: 10px; 
+        overflow: hidden; 
+    }
+/*HEADER BẢNG*/
+    th { background: var(--dark-coffee); color: white; padding: 15px; }
+/*Ô DỮ LIỆU*/
+    td { padding: 15px; border-bottom: 1px solid #ddd; text-align: center; }
+/*HOVER DÒNG*/
+    tr:hover { background-color: #f9f9f9; }
+/*NÚT THÊM*/
+    .btn-add { 
+        text-decoration: none; 
+        background: #795548; 
+        color: white; 
+        padding: 10px 20px; 
+        border-radius: 5px; 
+        display: inline-block; 
+        margin-bottom: 20px; 
+    }
+/*TRẠNG THÁI BÀN*/
+     .status-badge {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+/*TRANG THÁI BÀN TRỐNG*/
+.status-empty { background: #e8f5e9; color: #2e7d32; }
+/*NÚT XÓA*/
+.btn-delete {
+    color: #d32f2f;
+    text-decoration: none;
+    font-weight: bold;
+}
+.btn-delete:hover { text-decoration: underline; }
+
+/*5. CSS CHO POPUP*/
+
+/* POPUP NỀN MỜ */
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+/* FORM POPUP */
+.popup-content {
+    background: #fffaf0;
+    padding: 30px;
+    border-radius: 12px;
+    width: 400px;
+    position: relative;
+    animation: fadeIn 0.3s ease;
+}
+
+/* NÚT ĐÓNG */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 22px;
+    cursor: pointer;
+    color: red;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/*4. CSS CHO FROM NHẬP LIỆU*/
+/* Container chính */
+.form-container {
+    background-color: #fffaf0;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    max-width: 500px;
+    margin: 20px auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Tiêu đề */
+.form-container h2 {
+    color: #4b3832; 
+    text-align: center;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/*NHÓM INPUT*/
+.form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+/*LABEL*/
+.form-group label {
+    font-weight: 600;
+    color: #4b3832;
+    margin-bottom: 5px;
+}
+
+/* Input, Select */
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+/* Nút bấm */
+.btn-submit {
+    background-color: #7c675e; 
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+    margin-top: 10px;
+}
+
+.btn-submit:hover {
+    background-color: #4b3832; 
+}
+
+/* Tùy chỉnh input file cho đẹp hơn */
+.file-input {
+    background: white;
+    padding: 5px;
+    border: 1px dashed #7c675e;
+    border-radius: 6px;
+}
+        /* Badge phân quyền */
+.role-badge {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+.role-admin { background: #fff3e0; color: #ef6c00; } /* Cam cho Admin */
+.role-staff { background: #e3f2fd; color: #1565c0; } /* Xanh cho Staff */
+
+.btn-delete { color: #d32f2f; text-decoration: none; font-weight: bold; }
+.btn-delete:hover { text-decoration: underline; }
+
+
+.sidebar ul li {
+    list-style: none; 
+}
+.sidebar ul li {
+    list-style: none;
+    margin-bottom: 15px; 
+}
+
+.sidebar ul li {
+    list-style: none;
+    margin-bottom: 15px; 
+}
+
+/* Nút Logout:*/
+.sidebar ul li a.btn-logout {
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding: 12px; 
+    background: var(--medium-coffee); 
+    border-radius: 8px; 
+    text-align: center;
+    transition: 0.3s;
+    font-size: 16px; 
+}
+
+/* Hiệu ứng hover cho nút Logout*/
+.sidebar ul li a.btn-logout:hover {
+    background: var(--gold-coffee); 
+    color: var(--dark-coffee);
+    font-weight: bold;
+}
